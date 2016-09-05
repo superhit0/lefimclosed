@@ -1,4 +1,4 @@
-package ca.pfv.spmf.algorithms.frequentpatterns.efim_closed;
+package org.manyu.lefimclosed;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
@@ -9,7 +9,7 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-import ca.pfv.spmf.tools.MemoryLogger;
+//import ca.pfv.spmf.tools.MemoryLogger;
 
 /* This file is copyright (c) 2012-2015 Souleymane Zida & Philippe Fournier-Viger
  * 
@@ -39,7 +39,9 @@ import ca.pfv.spmf.tools.MemoryLogger;
  *
  * @author  Philippe Fournier-Viger, Souleymane Zida, using some code by Alan Souza 
  */
-public class AlgoEFIMClosed {
+public class AlgoLEFIMClosed {
+
+	int minLength,maxLength;
 
 	/** the set of high-utility itemsets */
 	private Itemsets highUtilityItemsets;
@@ -106,7 +108,7 @@ public class AlgoEFIMClosed {
 	/**
 	 * Constructor
 	 */
-	public AlgoEFIMClosed() {
+	public AlgoLEFIMClosed() {
 
 	}
 
@@ -130,7 +132,8 @@ public class AlgoEFIMClosed {
 	 */
 	public Itemsets runAlgorithm(int minUtil, String inputPath,
 			String outputPath, boolean activateTransactionMerging,
-			int maximumTransactionCount, boolean activateSubtreeUtilityPruning, boolean activateClosedPatternJump)
+			int maximumTransactionCount, boolean activateSubtreeUtilityPruning, boolean activateClosedPatternJump,
+								 int minLength,int maxLength)
 			throws IOException {
 
 		// reset variables for statistics
@@ -150,6 +153,9 @@ public class AlgoEFIMClosed {
 
 		// save the minUtil value selected by the user
 		this.minUtil = minUtil;
+
+		this.minLength=minLength;
+		this.maxLength=maxLength;
 
 		// if the user choose to save to file
 		// create object for writing the output file
@@ -262,7 +268,7 @@ public class AlgoEFIMClosed {
 			// Sort the dataset using a new comparator
 			Collections.sort(dataset.getTransactions(),
 					new Comparator<Transaction>() {
-						@Override
+						//@Override
 						/**
 						 * Compare two transactions
 						 */
@@ -463,7 +469,7 @@ public class AlgoEFIMClosed {
 		}
 	}
 
-	/**
+	/*
 	 * Recursive method to find all high-utility itemsets
 	 * 
 	 * @param the
@@ -881,7 +887,7 @@ public class AlgoEFIMClosed {
 		return false;
 	}
 
-	/**
+	/*
 	 * Check if an item appears in all transactions after the first one in a
 	 * list of transactions
 	 * 
@@ -996,7 +1002,7 @@ public class AlgoEFIMClosed {
 		}
 	}
 
-	/**
+	/*
 	 * Utilize the utility-bin arrays to calculate the sub-tree utility and
 	 * local utility of all items that can extend itemset P U {e}
 	 * 
@@ -1097,7 +1103,7 @@ public class AlgoEFIMClosed {
 		return utilityOfRemainingItemsJumpingClosure;
 	}
 
-	/**
+	/*
 	 * Save a high-utility itemset to file or memory depending on what the user
 	 * chose.
 	 * 

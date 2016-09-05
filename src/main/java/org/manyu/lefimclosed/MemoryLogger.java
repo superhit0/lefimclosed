@@ -1,4 +1,4 @@
-package ca.pfv.spmf.tools;
+package org.manyu.lefimclosed;
 /*
  *  Copyright (c) 2008-2012 Philippe Fournier-Viger
  * 

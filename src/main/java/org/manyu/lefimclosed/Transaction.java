@@ -1,4 +1,4 @@
-package ca.pfv.spmf.algorithms.frequentpatterns.efim_closed;
+package org.manyu.lefimclosed;
 
 
  

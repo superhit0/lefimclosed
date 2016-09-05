@@ -1,4 +1,4 @@
-package ca.pfv.spmf.algorithms.frequentpatterns.efim_closed;
+package org.manyu.lefimclosed;
 
 /* This file is copyright (c) 2008-2012 Philippe Fournier-Viger
 * 

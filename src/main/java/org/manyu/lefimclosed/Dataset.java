@@ -1,4 +1,4 @@
-package ca.pfv.spmf.algorithms.frequentpatterns.efim_closed;
+package org.manyu.lefimclosed;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -24,7 +24,7 @@ import java.util.List;
  * This is the parser class for the dataset.
  * It has actions related to parse a txt based file to a Dataset class.
  *
- * @see AlgoEFIMClosed
+ * @see AlgoLEFIMClosed
  */
 public class Dataset {
 
