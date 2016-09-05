@@ -248,5 +248,9 @@ public class Transaction {
 		return -1;
 	}
 
+	public int getTransactionLength(){
+		return items.length;
+	}
+
 
 }

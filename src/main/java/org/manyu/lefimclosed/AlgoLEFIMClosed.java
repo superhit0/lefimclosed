@@ -150,6 +150,7 @@ public class AlgoLEFIMClosed {
 
 		// read the input file
 		Dataset dataset = new Dataset(inputPath, maximumTransactionCount);
+        dataset.pruneSmallTransactions(minLength);
 
 		// save the minUtil value selected by the user
 		this.minUtil = minUtil;
@@ -486,6 +487,9 @@ public class AlgoLEFIMClosed {
 	private int backtrackingEFIM(List<Transaction> transactionsOfP,
 			List<Integer> itemsToKeep, List<Integer> itemsToExplore,
 			int prefixLength) throws IOException {
+
+	    if(prefixLength+1>maxLength)
+	        return 0;
 
 		int maxSupport = 0;
 
