@@ -41,7 +41,9 @@ import java.util.List;
  */
 public class AlgoLEFIMClosed {
 
+	//MANYU
 	int minLength,maxLength;
+	//MANYU
 
 	/** the set of high-utility itemsets */
 	private Itemsets highUtilityItemsets;
@@ -150,7 +152,9 @@ public class AlgoLEFIMClosed {
 
 		// read the input file
 		Dataset dataset = new Dataset(inputPath, maximumTransactionCount);
+		//MANYU
         dataset.pruneSmallTransactions(minLength);
+		//MANYU
 
 		// save the minUtil value selected by the user
 		this.minUtil = minUtil;
@@ -488,8 +492,10 @@ public class AlgoLEFIMClosed {
 			List<Integer> itemsToKeep, List<Integer> itemsToExplore,
 			int prefixLength) throws IOException {
 
+		//MANYU
 	    if(prefixLength+1>maxLength)
 	        return 0;
+		//MANYU
 
 		int maxSupport = 0;
 

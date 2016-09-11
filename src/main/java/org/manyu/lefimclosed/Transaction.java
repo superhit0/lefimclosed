@@ -248,6 +248,7 @@ public class Transaction {
 		return -1;
 	}
 
+	//MANYU
 	public int getTransactionLength(){
 		return items.length;
 	}
