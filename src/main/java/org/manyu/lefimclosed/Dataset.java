@@ -146,6 +146,7 @@ public class Dataset {
     }
 
     //MANYU
+    //Remove transactions from database that are smaller than minLength
     public void pruneSmallTransactions(int minLength){
         for(int i=0;i<transactions.size();i++){
             if(transactions.get(i).getTransactionLength()<minLength){

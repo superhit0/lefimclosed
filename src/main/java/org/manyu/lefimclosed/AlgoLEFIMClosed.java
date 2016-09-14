@@ -153,6 +153,7 @@ public class AlgoLEFIMClosed {
 		// read the input file
 		Dataset dataset = new Dataset(inputPath, maximumTransactionCount);
 		//MANYU
+		//Remove transactions from database that are smaller than minLength
         dataset.pruneSmallTransactions(minLength);
 		//MANYU
 
@@ -493,7 +494,9 @@ public class AlgoLEFIMClosed {
 			int prefixLength) throws IOException {
 
 		//MANYU
-	    if(prefixLength+1>maxLength)
+		//Don't check for itemsets greater than maxLength
+		//Terminate if length of itemset goes beyond maxLength
+	    if(prefixLength>maxLength)
 	        return 0;
 		//MANYU
 

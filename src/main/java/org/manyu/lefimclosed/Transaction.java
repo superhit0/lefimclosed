@@ -249,6 +249,7 @@ public class Transaction {
 	}
 
 	//MANYU
+	//Get Length of current Transaction
 	public int getTransactionLength(){
 		return items.length;
 	}
