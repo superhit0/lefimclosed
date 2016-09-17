@@ -496,7 +496,7 @@ public class AlgoLEFIMClosed {
 		//MANYU
 		//Don't check for itemsets greater than maxLength
 		//Terminate if length of itemset goes beyond maxLength
-	    if(prefixLength>maxLength)
+	    if(prefixLength+1>maxLength)
 	        return 0;
 		//MANYU
 
